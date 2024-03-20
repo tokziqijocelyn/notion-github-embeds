@@ -9,11 +9,11 @@ const DAY_COL_SPAN = 3
 
 // TODO: @bizarre, make these colors configurable via props + api
 const COLOR_REPLACEMENT_MAP_DARK = {
-  '#ebedf0': 'dark:bg-[rgba(255,255,255,0.01)]', // intensity 0 bg-[#ebedf0] -> dark:bg-[rgba(255,255,255,0.01)]
-  '#e9a09b': 'dark:bg-[#d32f2f]', // intensity 1 bg-[#9be9a8] -> dark:bg-[#d32f2f] (red-pink)
-  '#c44040': 'dark:bg-[#ff1744]', // intensity 2 bg-[#40c463] -> dark:bg-[#ff1744] (red-pink)
-  '#a13030': 'dark:bg-[#ff5252]', // intensity 3 bg-[#30a14e] -> dark:bg-[#ff5252] (red-pink)
-  '#6e2121': 'dark:bg-[#ff8a80]', // intensity 4 bg-[#216e39] -> dark:bg-[#ff8a80] (red-pink)
+  '#ebedf0': 'dark:bg-[rgba(255,255,255,0.01)]', 
+  '#e9a09b': 'dark:bg-[#d32f2f]', 
+  '#c44040': 'dark:bg-[#ff1744]', 
+  '#a13030': 'dark:bg-[#ff5252]', 
+  '#6e2121': 'dark:bg-[#ff8a80]', 
 }
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
