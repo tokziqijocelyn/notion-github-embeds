@@ -9,11 +9,11 @@ const DAY_COL_SPAN = 3
 
 // TODO: @bizarre, make these colors configurable via props + api
 const COLOR_REPLACEMENT_MAP_DARK = {
-  '#ebedf0': 'dark:bg-[rgba(255,255,255,0.01)]', // intensity 0 bg-[#ebedf0] -> dark:bg-[rgba(255,255,255,0.01)]
-  '#9be9a8': 'dark:bg-[#d32f2f]', // intensity 1 bg-[#9be9a8] -> dark:bg-[#d32f2f] (red-pink)
-  '#40c463': 'dark:bg-[#ff1744]', // intensity 2 bg-[#40c463] -> dark:bg-[#ff1744] (red-pink)
-  '#30a14e': 'dark:bg-[#ff5252]', // intensity 3 bg-[#30a14e] -> dark:bg-[#ff5252] (red-pink)
-  '#216e39': 'dark:bg-[#ff8a80]', // intensity 4 bg-[#216e39] -> dark:bg-[#ff8a80] (red-pink)
+  'rgba(230, 239, 240, 0.01)': 'dark:bg-[rgba(230, 0, 0, 0.01)] text-red-50', // intensity 0 rgba(230, 239, 240, 0.01) -> dark:bg-[rgba(230, 0, 0, 0.01)] text-red-50 (light red, dark red text)
+  'rgba(155, 233, 168, 0.3)': 'dark:bg-[#c02942] text-red-200', // intensity 1 rgba(155, 233, 168, 0.3) -> dark:bg-[#c02942] text-red-200 (light green, red, medium red text)
+  'rgba(64, 196, 99, 0.5)': 'dark:bg-[#e63946] text-red-300', // intensity 2 rgba(64, 196, 99, 0.5) -> dark:bg-[#e63946] text-red-300 (light green, red, light red text)
+  'rgba(48, 161, 78, 0.7)': 'dark:bg-[#f45b52] text-red-400', // intensity 3 rgba(48, 161, 78, 0.7) -> dark:bg-[#f45b52] text-red-400 (light green, red, dark red text)
+  'rgba(33, 110, 57, 0.9)': 'dark:bg-[#ff7f50] text-red-600', // intensity 4 rgba(33, 110, 57, 0.9) -> dark:bg-[#ff7f50] text-red-600 (dark green, orange-red, red text)
 }
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
