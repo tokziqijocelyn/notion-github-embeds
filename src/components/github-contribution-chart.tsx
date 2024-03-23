@@ -9,12 +9,13 @@ const DAY_COL_SPAN = 3
 
 // TODO: @bizarre, make these colors configurable via props + api
 const COLOR_REPLACEMENT_MAP_DARK = {
-  '#ebedf0': 'dark:bg-[rgba(255,255,255,0.01)]', // intensity 0 bg-[#ebedf0] -> dark:bg-[rgba(255,255,255,0.01)]
-  '#9be9a8': 'dark:bg-[#0e4429]', // intensity 1 bg-[#9be9a8] -> dark:bg-[#0e4429]
-  '#40c463': 'dark:bg-[#006d32]', // intensity 2 bg-[#40c463] -> dark:bg-[#006d32]
-  '#30a14e': 'dark:bg-[#26a641]', // intensity 3 bg-[#30a14e] -> dark:bg-[#26a641]
-  '#216e39': 'dark:bg-[#39d353]', // intensity 4 bg-[#216e39] -> dark:bg-[#39d353]
+  '#ebedf0': 'bg-[rgba(255,255,255,0.01)]', // intensity 0 bg-[#ebedf0] -> dark:bg-[rgba(255,255,255,0.01)]
+  '#9be9a8': 'bg-[#ffc9c4]', // intensity 1 bg-[#9be9a8] -> dark:bg-[#ffb3b3] (more pink, slightly more saturated)
+  '#40c463': 'bg-[#fa9a91]', // intensity 2 bg-[#40c463] -> dark:bg-[#ff9999] (more pink, slightly more saturated)
+  '#30a14e': 'bg-[#f26f63]', // intensity 3 bg-[#30a14e] -> dark:bg-[#ff7f7f] (more pink, slightly more saturated)
+  '#216e39': 'bg-[#e84638]', // intensity 4 bg-[#216e39] -> dark:bg-[#ff8a80] (unchanged, assuming pastel)
 }
+
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
