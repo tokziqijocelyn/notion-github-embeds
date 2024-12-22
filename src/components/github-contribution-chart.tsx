@@ -178,7 +178,7 @@ export default async function GithubContributionChart({
                     {contributionIndex >= currentDateIndex && (
                       <div
                         data-date={contribution?.date}
-                        className={`border border-gray-500/20 dark:border-gray-300/10 box-border aspect-square embed-md:rounded-[1.5px] embed-xl:rounded-sm min-h-[2px] min-w[2px] bg-[${contribution.color}] ${COLOR_REPLACEMENT_MAP_DARK[contribution.color[theme]]}`}
+                        className={`border border-gray-500/20 dark:border-gray-300/10 box-border aspect-square embed-md:rounded-[1.5px] embed-xl:rounded-sm min-h-[2px] min-w[2px] bg-[${contribution.color[theme]}] ${COLOR_REPLACEMENT_MAP_DARK[contribution.color[theme]]}`}
                       ></div>
                     )}
                   </td>
