@@ -1,5 +1,6 @@
 export interface TGithubContributionChartProps {
   username: string
+  theme: "red" | "green" | "blue" | "purple" | "yellow" | "gray"
 }
 
 const WEEKS = 53
@@ -7,21 +8,67 @@ const DAYS_IN_WEEK = 7
 const MONTHS_IN_YEAR = 12
 const DAY_COL_SPAN = 3
 
-// TODO: @bizarre, make these colors configurable via props + api
-const COLOR_REPLACEMENT_MAP_DARK = {
-  '#ebedf0': 'bg-[rgba(255,255,255,0.01)]', // intensity 0 bg-[#ebedf0] -> dark:bg-[rgba(255,255,255,0.01)]
-  '#9be9a8': 'bg-[#ffc9c4]', // intensity 1 bg-[#9be9a8] -> dark:bg-[#ffb3b3] (more pink, slightly more saturated)
-  '#40c463': 'bg-[#fa9a91]', // intensity 2 bg-[#40c463] -> dark:bg-[#ff9999] (more pink, slightly more saturated)
-  '#30a14e': 'bg-[#f26f63]', // intensity 3 bg-[#30a14e] -> dark:bg-[#ff7f7f] (more pink, slightly more saturated)
-  '#216e39': 'bg-[#e84638]', // intensity 4 bg-[#216e39] -> dark:bg-[#ff8a80] (unchanged, assuming pastel)
-}
-
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 export default async function GithubContributionChart({
   username,
+  theme,
 }: TGithubContributionChartProps) {
+
+  // TODO: @bizarre, make these colors configurable via props + api
+  // The keys are based on the default github contribution chart colors
+
+  // let colorsAvailable = {
+  //   "red": ["#ffebee", "#ffcdd2", "#ef9a9a", "#e53935"],
+  //   "green": ["#e8f5e9", "#a5d6a7", "#66bb6a", "#2e7d32"], 
+  //   "blue": ["#e3f2fd", "#90caf9", "#42a5f5", "#1976d2"],
+  //   "purple": ["#f3e5f5", "#ce93d8", "#ab47bc", "#7b1fa2"],
+  //   "yellow": ["#fffde7", "#fff59d", "#ffee58", "#fdd835"],
+  //   "gray": ["#f5f5f5", "#e0e0e0", "#9e9e9e", "#616161"]
+  // }
+
+  let COLOR_REPLACEMENT_MAP_DARK = {
+    '#ebedf0': '#1f1f1f', // intensity 0 (no contributions)
+    '#9be9a8': {
+      "red": "#ffcdd2",
+      "green": "#a5d6a7",
+      "blue": "#90caf9", 
+      "purple": "#ce93d8",
+      "yellow": "#fff59d",
+      "gray": "#e0e0e0"
+    },
+    '#40c463': {
+      "red": "#ef9a9a",
+      "green": "#66bb6a",
+      "blue": "#42a5f5",
+      "purple": "#ab47bc", 
+      "yellow": "#ffee58",
+      "gray": "#9e9e9e"
+    },
+    '#30a14e': {
+      "red": "#e53935",
+      "green": "#2e7d32",
+      "blue": "#1976d2",
+      "purple": "#7b1fa2",
+      "yellow": "#fdd835", 
+      "gray": "#616161"
+    },
+    '#216e39': {
+      "red": "#e53935",
+      "green": "#2e7d32",
+      "blue": "#1976d2",
+      "purple": "#7b1fa2",
+      "yellow": "#fdd835",
+      "gray": "#616161"
+    }
+  }
+
+
+  for (const [key, value] of Object.entries(colorsAvailable)) {
+    COLOR_REPLACEMENT_MAP_DARK[value[0]] = `bg-[${value[1]}]`
+  }
+
   // get current date
   const date = new Date()
   // remove time
@@ -136,7 +183,7 @@ export default async function GithubContributionChart({
                     {contributionIndex >= currentDateIndex && (
                       <div
                         data-date={contribution?.date}
-                        className={`border border-gray-500/20 dark:border-gray-300/10 box-border aspect-square embed-md:rounded-[1.5px] embed-xl:rounded-sm min-h-[2px] min-w[2px] bg-[${contribution.color}] ${COLOR_REPLACEMENT_MAP_DARK[contribution.color]}`}
+                        className={`border border-gray-500/20 dark:border-gray-300/10 box-border aspect-square embed-md:rounded-[1.5px] embed-xl:rounded-sm min-h-[2px] min-w[2px] bg-[${contribution.color}] ${COLOR_REPLACEMENT_MAP_DARK[contribution.color[theme]]}`}
                       ></div>
                     )}
                   </td>
