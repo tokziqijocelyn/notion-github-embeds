@@ -64,11 +64,6 @@ export default async function GithubContributionChart({
     }
   }
 
-
-  for (const [key, value] of Object.entries(colorsAvailable)) {
-    COLOR_REPLACEMENT_MAP_DARK[value[0]] = `bg-[${value[1]}]`
-  }
-
   // get current date
   const date = new Date()
   // remove time
